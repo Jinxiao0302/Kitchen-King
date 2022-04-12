@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <h1 class="text-center">New Receipes</h1>
+    <div class="col-6 offset-3">
+        <form action="/receipes" method="POST" novalidate class="validated-form">
+            <div class="mb-3">
+                <label class="form-label" for="title">Name</label>
+                <input class="form-control" type="text" id="title" name="receipe[name]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Steps</label>
+                <input class="form-control" type="text" id="location" name="receipe[steps]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" id="image" name="receipe[image]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="receipe[description]"
+                    required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Receipes</button>
+            </div>
+        </form>
+        <a href="/receipes">All Receipes</a>
+    </div>
+</div>

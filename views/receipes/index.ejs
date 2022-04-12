@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+
+<h1>All Receipes</h1>
+<div>
+    <a href="/receipes/new">Add New Receipes</a>
+</div>
+
+<p>
+    <form action = "/receipes/search" method = "GET" id="form" role="search">
+        <input type="search" id="query" name="q"
+        placeholder="Search for receipes..."
+        aria-label="Search through site content">
+        <button>Search</button>
+    </form>
+</p>
+<% for (let receipe of receipes){%>
+<div class="card" mb-3>
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" alt="" src="<%=receipe.image%>">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= receipe.name %> </h5>
+                <p class="card-text"><%= receipe.description %></p>
+                <p class="card-text">
+                    <small class="text-muted"><%= receipe.steps%></small>
+                </p>
+                <a class="btn btn-primary" href="/receipes/<%=receipe._id%>">View <%=receipe.name%></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%>
