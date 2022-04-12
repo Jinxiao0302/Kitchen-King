@@ -2,5 +2,7 @@
 Node.js-based receipe website
 Should install MongoDB
 
+
 Install dependencies: npm install
-Run the application: npm 
+
+Run the application: node app.js
